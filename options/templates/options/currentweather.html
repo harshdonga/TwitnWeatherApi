@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Currentweather</title>
+  </head>
+  <body>
+    <label>{{ city_name }}:
+      <ul>
+        <li>Temperature : {{ r.main.temp }}</li>
+        <li>Wind Speed : {{ r.wind.speed }}%</li>
+        <p>{{ r.weather.description }}</p>
+      </ul>
+    </label>
+  </body>
+</html>

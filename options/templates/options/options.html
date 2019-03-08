@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load staticfiles %}
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+      .card {
+        align-items: center;
+        height: 900px;
+        width: 600px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+      }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+      .container {
+        padding: 2px 16px;
+      }
+      .column {
+        float: left;
+        width: 50%;
+        /* padding: 5px; */
+      }
+
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+  </style>
+  <body>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src={% static "Current weather.png"%} alt="Avatar" style="width:100%">
+          <div class="container">
+            <h2><b>Type In City Here!</b></h2>
+            <p>
+              <form action="currentweather/" method="post">
+                {% csrf_token %}
+                  <input type="text" name="city_name" placeholder="e.g Mumbai...">
+                  <input type="submit" value="Check">
+              </form>
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+          <div class="card">
+            <img src={% static "background.jpg" %} alt="Avatar" style="width:100%">
+            <div class="container">
+              <h2><b>Type In City Here!</b></h2>
+              <p>
+                <form action="fiveday3h/" method="post">
+                  {% csrf_token %}
+                    <input type="text" name="city_name" placeholder="e.g Tokyo...">
+                    <input type="submit" value="Check">
+                </form>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
